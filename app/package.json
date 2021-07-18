@@ -1,0 +1,42 @@
+{
+  "_comment": "comment text goes here...",
+  "name": "app",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android-build": "cd android && ./gradlew bundleRelease",
+    "android-build-apk": "cd android && ./gradlew assembleRelease",
+    "android": "adb reverse tcp:8081 tcp:8081 && adb reverse tcp:9090 tcp:9090 && react-native run-android",
+    "ios": "react-native run-ios --device='iPhone de Silvio'",
+    "ios11": "react-native run-ios",
+    "androidclean": "cd android && ./gradlew clean",
+    "ios6s": "react-native run-ios --simulator='iPhone 6s'",
+    "ios6sPlus": "react-native run-ios --simulator='iPhone 6s Plus'",
+    "iosSmall": "react-native run-ios --simulator='iPhone 5s'",
+    "pod": "cd ios && pod install",
+    "start": "adb reverse tcp:8081 tcp:8081 && adb reverse tcp:9090 tcp:9090 && adb reverse tcp:8000 tcp:8000 && react-native start --reset-cache",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "17.0.1",
+    "react-native": "0.64.2",
+    "react-native-credit-card-input": "^0.4.1",
+    "react-native-gesture-handler": "^1.10.3",
+    "react-native-maps": "0.28.0",
+    "react-native-pulse": "^1.0.7",
+    "styled-components": "^5.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/runtime": "^7.14.6",
+    "@react-native-community/eslint-config": "^3.0.0",
+    "babel-jest": "^27.0.6",
+    "eslint": "^7.30.0",
+    "jest": "^27.0.6",
+    "metro-react-native-babel-preset": "^0.66.1",
+    "react-test-renderer": "17.0.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
