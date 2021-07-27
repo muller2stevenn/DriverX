@@ -1,6 +1,9 @@
+import React from 'react';
 import {AppRegistry} from 'react-native';
-
 import {name as appName} from './app.json';
+
+import { Provider} from 'react-redux';
+import store from './src/store';
 
 import Login from './src/pages/Login';
 import Type from './src/pages/Steps/type';
@@ -9,4 +12,10 @@ import Payment from './src/pages/Steps/payment';
 import Ride from './src/pages/Ride';
 import Home from './src/pages/Home';
 
-AppRegistry.registerComponent(appName, () => Home);
+const App =  () => (
+    <Provider store={store}>
+       <Home /> 
+    </Provider> 
+)
+
+AppRegistry.registerComponent(appName, () => App);
